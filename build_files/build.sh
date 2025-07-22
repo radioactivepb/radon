@@ -152,9 +152,11 @@ $DNF install -y --nogpgcheck --repofrompath \
 $DNF update --refresh -y
 
 # $DNF_INSTALL "${DNF_GROUPS[@]}"
+$DNF clean all
 $DNF_INSTALL "${DNF_PACKAGES[@]}"
+$DNF clean all
 $DNF swap -y ffmpeg-free ffmpeg
-$DNF update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
+$DNF install -y --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin --skip-unavailable @multimedia
 
 systemctl enable podman.socket
 systemctl disable initial-setup.service
