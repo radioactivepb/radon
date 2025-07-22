@@ -27,21 +27,14 @@ DNF_PACKAGES=(
     nvidia-settings
     nvidia-container-toolkit
     nvidia-vaapi-driver
-    fedpkg
-    qt3-devel
     xpadneo
     ghostty
-    SDL3-devel
-    autoconf-archive
-    automake
     bat
     bsdtar
     btop
     btrfs-assistant
-    buildah
     bzip2
     cabextract
-    cargo
     ccache
     cifs-utils
     cmake
@@ -51,7 +44,6 @@ DNF_PACKAGES=(
     fuse
     libfuse2
     xorg-x11-font-utils
-    dnf-plugin-versionlock
     docker
     dtc
     fastfetch
@@ -70,7 +62,6 @@ DNF_PACKAGES=(
     jq
     just
     kdenlive
-    kitty
     libX11-devel
     libXcursor-devel
     libXi-devel
@@ -98,7 +89,6 @@ DNF_PACKAGES=(
     nodejs
     npm
     obs-studio
-    ollama
     openrgb
     p7zip
     p7zip-plugins
@@ -145,7 +135,6 @@ DNF_PACKAGES=(
     winetricks
     xxd
     xz
-    yakuake
     zig
     zip
     zlib-ng-compat-static
@@ -162,7 +151,7 @@ $DNF install -y --nogpgcheck --repofrompath \
 		'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 $DNF update --refresh -y
 
-$DNF_INSTALL "${DNF_GROUPS[@]}"
+# $DNF_INSTALL "${DNF_GROUPS[@]}"
 $DNF_INSTALL "${DNF_PACKAGES[@]}"
 $DNF swap -y ffmpeg-free ffmpeg
 $DNF update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
