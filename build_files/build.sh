@@ -2,6 +2,6 @@
 
 set -ouex pipefail
 
-./chromebook-fixes/fix
+/ctx/chromebook-fix.sh
 
 systemctl enable podman.socket
