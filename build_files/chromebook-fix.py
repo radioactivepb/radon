@@ -1,5 +1,3 @@
-y#!/usr/bin/env python3
-
 import contextlib
 import subprocess
 import sys
