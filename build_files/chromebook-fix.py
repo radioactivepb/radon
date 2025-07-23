@@ -489,10 +489,9 @@ if __name__ == "__main__":
     cpfile("/usr/share/X11/xkb/symbols/pc", "/usr/share/X11/xkb/symbols/pc.bak")
     cpfile("/ctx/conf/xkb/pc", "/usr/share/X11/xkb/symbols/pc")
     print_status("Keyboard setup complete!")
-    platform = get_platform()
-    platform_config(platform, args)
+    avs_config()
     install_ucm()
-    check_kernel_config(platform)
+    check_kernel_config("kbl")
     if path_exists("/usr/bin/wireplumber"):
         print_header("Increasing alsa headroom (fixes instability)")
         mkdir("/etc/wireplumber/wireplumber.conf.d/", create_parents=True)
